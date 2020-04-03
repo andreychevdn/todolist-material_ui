@@ -1,0 +1,15 @@
+.link {
+  padding: 10px 40px;
+  font-size: 16px;
+  text-decoration: none;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.link.active {
+  color: red;
+}
+
+.item {
+  padding: 10px 30px;
+}

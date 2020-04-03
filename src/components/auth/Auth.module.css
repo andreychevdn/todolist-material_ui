@@ -1,0 +1,9 @@
+.wrapButtons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+}
+
+.btnSignUp {
+  margin-right: 20px;
+}

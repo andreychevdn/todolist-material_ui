@@ -1,0 +1,17 @@
+.wrapForm {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.signUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 65vh;
+  padding: 30px 200px;
+}
+
+.area {
+  background-color: rgb(238, 234, 172);
+}

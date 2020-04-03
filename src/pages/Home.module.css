@@ -1,0 +1,9 @@
+.text {
+  margin-top: 65px;
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: justify;
+  line-height: 25px;
+  color: green;
+}

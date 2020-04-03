@@ -1,0 +1,35 @@
+.container {
+  height: 100vh;
+  padding-top: 170px;
+  /* background-color: darkkhaki;   */
+}
+
+.wrap {
+  min-height: 25vh;
+  position: relative;
+  background-color: rgb(238, 234, 172);
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  font-weight: bold;
+  font-size: 21px;
+  color: dimgray;
+  text-transform: uppercase;
+}
+
+.done {
+  text-decoration: line-through;
+  background-color: #ccc;
+}
+
+.color,
+.color input {
+  color: red;
+}
+
+.btn {
+  margin: 20px 15px 10px 0;
+}
