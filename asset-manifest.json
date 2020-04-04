@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/todolist-material_ui/static/css/main.112972fd.chunk.css",
+    "main.js": "/todolist-material_ui/static/js/main.13bc009b.chunk.js",
+    "main.js.map": "/todolist-material_ui/static/js/main.13bc009b.chunk.js.map",
+    "runtime-main.js": "/todolist-material_ui/static/js/runtime-main.3c28e4f9.js",
+    "runtime-main.js.map": "/todolist-material_ui/static/js/runtime-main.3c28e4f9.js.map",
+    "static/js/2.d78f3c0f.chunk.js": "/todolist-material_ui/static/js/2.d78f3c0f.chunk.js",
+    "static/js/2.d78f3c0f.chunk.js.map": "/todolist-material_ui/static/js/2.d78f3c0f.chunk.js.map",
+    "index.html": "/todolist-material_ui/index.html",
+    "precache-manifest.8acd156861a2bdd8e975db3da1e1ca74.js": "/todolist-material_ui/precache-manifest.8acd156861a2bdd8e975db3da1e1ca74.js",
+    "service-worker.js": "/todolist-material_ui/service-worker.js",
+    "static/css/main.112972fd.chunk.css.map": "/todolist-material_ui/static/css/main.112972fd.chunk.css.map",
+    "static/js/2.d78f3c0f.chunk.js.LICENSE": "/todolist-material_ui/static/js/2.d78f3c0f.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3c28e4f9.js",
+    "static/js/2.d78f3c0f.chunk.js",
+    "static/css/main.112972fd.chunk.css",
+    "static/js/main.13bc009b.chunk.js"
+  ]
+}
