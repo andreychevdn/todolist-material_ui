@@ -25,6 +25,10 @@
   background-color: #ccc;
 }
 
+.color input:hover {
+  cursor: pointer;
+}
+
 .color,
 .color input {
   color: red;
