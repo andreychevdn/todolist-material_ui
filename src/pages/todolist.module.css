@@ -1,8 +1,7 @@
 .container {
   height: 100vh;
-  padding-top: 170px;
-  /* background-color: darkkhaki;   */
-}
+  padding-top: 200px;
+ }
 
 .wrap {
   min-height: 25vh;
@@ -22,16 +21,23 @@
 
 .done {
   text-decoration: line-through;
-  background-color: #ccc;
 }
 
-.color input:hover {
+.field {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.field input:hover {
   cursor: pointer;
 }
 
-.color,
-.color input {
+.field {
   color: red;
+}
+
+.field input {
+  color: blue;
 }
 
 .btn {

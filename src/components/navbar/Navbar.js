@@ -137,7 +137,7 @@ export const Navbar = () => {
               <NavLink
                 className={cls.link}
                 exact
-                to="/"
+                to="/home"
                 activeClassName={cls.active}
               >
                 Home

@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import { Fragment } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { StylesProvider } from "@material-ui/core/styles";
 import Auth from "./components/auth/Auth";
@@ -14,34 +14,36 @@ import { AlertState } from "./context/alert/alertState";
 
 function App() {
   const [state, dispatch] = useReducer(authorizationReducer, {
-    registrationForm: {
+    registrationForm: JSON.parse(
+      sessionStorage.getItem("registrationForm")
+    ) || {
       login: {
         draft: "",
-        value: ""
+        value: "",
       },
       password1: {
         draft: "",
-        value: ""
+        value: "",
       },
       password2: {
         draft: "",
-        value: ""
+        value: "",
       },
       email: {
         draft: "",
-        value: ""
-      }
+        value: "",
+      },
     },
     authorizationForm: {
       login: {
-        draft: ""
+        draft: "",
       },
       password: {
-        draft: ""
-      }
+        draft: "",
+      },
     },
     isValid: false,
-    isRegistration: false
+    isRegistration: false,
   });
 
   return (
@@ -51,17 +53,17 @@ function App() {
         <div>
           <AlertState>
             <AuthContext.Provider value={{ state, dispatch }}>
-              {!state.isValid ? <Auth /> : null}
+              {!state.isValid ? <Route path="/" component={Auth} /> : null}
             </AuthContext.Provider>
             {state.isValid ? (
-              <BrowserRouter>
+              <>
                 <Navbar />
                 <Switch>
-                  <Route path="/" exact component={Home} />
+                  <Route path="/home" component={Home} />
                   <Route path="/todolist" component={TodoList} />
                   <Route path="/manual" component={Manual} />
                 </Switch>
-              </BrowserRouter>
+              </>
             ) : null}
           </AlertState>
         </div>

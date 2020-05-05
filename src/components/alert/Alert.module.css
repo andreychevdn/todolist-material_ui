@@ -1,6 +1,7 @@
 .wrapAlert {
     position: fixed;
     left: 0;
-    top: 45%;
+    bottom: 0;
+    z-index: 10;
 }
 

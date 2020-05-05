@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import classes from "./Auth.module.css";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -8,37 +8,44 @@ import { AuthContext } from "../../context/auth/authContext";
 import { AlertContext } from "../../context/alert/alertContext";
 import { TodoAlert } from "../alert/Alert";
 
-const Auth = () => {
+const Auth = (props) => {
   const { state, dispatch } = useContext(AuthContext);
   const { alert } = useContext(AlertContext);
+
+  const goToAuth = () => {
+    props.history.push("/");
+  };
+
+  useEffect(() => {
+    goToAuth();
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem(
+      "registrationForm",
+      JSON.stringify(state.registrationForm)
+    );
+  }, [state.registrationForm]);
 
   return (
     <Container maxWidth="xl" className={classes.authContainer}>
       <Typography component="div" style={{ height: "100vh" }}>
         <div className={classes.wrapButtons}>
-          <div>
-            <Button
-              className={classes.btnSignUp}
-              variant="outlined"
-              color="primary"
-              onClick={() => dispatch({ type: "SIGN_UP" })}
-            >
-              SIGN UP
-            </Button>
-            <Button
-              variant="outlined"
-              color="primary"
-              onClick={() => dispatch({ type: "LOG_IN" })}
-            >
-              LOG IN
-            </Button>
-          </div>
+          <Button
+            className={classes.btnSignUp}
+            variant="outlined"
+            color="primary"
+            onClick={() => dispatch({ type: "SIGN_UP" })}
+          >
+            SIGN UP
+          </Button>
           <Button
             variant="outlined"
-            color="secondary"
-            onClick={() => dispatch({ type: "SIGN_IN_WITHOUT_SIGN_UP" })}
+            color="primary"
+            onClick={() => dispatch({ type: "LOG_IN" })}
           >
-            SIGN IN WITHOUT SIGN UP
+            LOG IN
           </Button>
         </div>
         {alert.alertVisible ? <TodoAlert /> : null}

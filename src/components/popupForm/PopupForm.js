@@ -11,9 +11,11 @@ import {
   NEW_TASK_DRAFT_HANDLER,
   SAVE_CHANGE_TASK,
   SAVE_NEW_TASK,
-  CANCEL_CHANGE_TASK
+  CANCEL_CHANGE_TASK,
+  url,
 } from "../../reducers/todoListReducer";
 import { TodoAlert } from "../alert/Alert";
+import axios from "axios";
 
 export const PopupForm = ({ name, placeholder }) => {
   const { state, dispatch } = useContext(TodoListContext);
@@ -21,19 +23,56 @@ export const PopupForm = ({ name, placeholder }) => {
   const styleTextField = [];
   let { tasks, newTaskDraft, formNewTask, selectedTask } = state;
 
-  const saveNewTask = () => {
-    if (newTaskDraft) {
-      dispatch({ type: SAVE_NEW_TASK });
-    } else {
-      showAlert("This field don't should to be empty!", "error");
+  const saveNewTask = async () => {
+    try {
+      if (newTaskDraft) {
+        hideAlert();
+        const task = {
+          text: newTaskDraft,
+          draft: "",
+          disabled: false,
+          isdone: false,
+          number: null,
+          date: new Date().toJSON(),
+          checked: false,
+        };
+        const res = await axios.post(`${url}/tasks.json`, task);
+        if (res.status >= 400) {
+          throw new Error("Something went wrong!");
+        }
+        const payload = {
+          ...task,
+          id: res.data.name,
+        };
+        dispatch({ type: SAVE_NEW_TASK, payload });
+      } else {
+        showAlert("This field don't should to be empty!", "error");
+      }
+    } catch (e) {
+      showAlert(`httpError: ${e.message}`, "error");
     }
   };
 
-  const saveChangeTask = () => {
-    if (state.tasks[selectedTask].draft) {
-      dispatch({ type: SAVE_CHANGE_TASK });
-    } else {
-      showAlert("This field don't should to be empty!", "error");
+  const saveChangeTask = async (id) => {
+    try {
+      if (state.tasks[selectedTask].draft) {
+        const newTask = {
+          ...state.tasks[selectedTask],
+          text: state.tasks[selectedTask].draft,
+          draft: "",
+          disabled: false,
+          number: null,
+        };
+        const res = await axios.put(`${url}/tasks/${id}.json`, newTask);
+        if (res.status >= 400) {
+          throw new Error("Something went wrong!");
+        }
+        dispatch({ type: SAVE_CHANGE_TASK, payload: newTask });
+      } else {
+        showAlert("This field don't should to be empty!", "error");
+      }
+    } catch (e) {
+      showAlert(`httpError: ${e.message}`, "error");
     }
   };
 
@@ -57,7 +96,7 @@ export const PopupForm = ({ name, placeholder }) => {
     <Container maxWidth="xl" className={cls.container}>
       {alert.alertVisible ? <TodoAlert /> : null}
       <Container maxWidth="sm">
-        <form onSubmit={event => event.preventDefault()}>
+        <form onSubmit={(event) => event.preventDefault()}>
           <fieldset className={cls.wrap}>
             <legend>{name === "Add task" ? "ADD TASK" : "CHANGE TASK"}</legend>
             <TextField
@@ -69,15 +108,15 @@ export const PopupForm = ({ name, placeholder }) => {
               className={styleTextField.join()}
               onChange={
                 formNewTask
-                  ? event =>
+                  ? (event) =>
                       dispatch({
                         type: NEW_TASK_DRAFT_HANDLER,
-                        value: event.target.value
+                        value: event.target.value,
                       })
-                  : event =>
+                  : (event) =>
                       dispatch({
                         type: ON_CHANGE_DRAFT,
-                        value: event.target.value
+                        value: event.target.value,
                       })
               }
               value={formNewTask ? newTaskDraft : tasks[selectedTask].draft}
@@ -86,7 +125,11 @@ export const PopupForm = ({ name, placeholder }) => {
               variant="outlined"
               color="primary"
               className={cls.btn}
-              onClick={formNewTask ? saveNewTask : saveChangeTask}
+              onClick={
+                formNewTask
+                  ? saveNewTask
+                  : () => saveChangeTask(state.tasks[selectedTask].id)
+              }
             >
               SAVE
             </Button>
