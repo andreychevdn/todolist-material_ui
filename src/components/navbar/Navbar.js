@@ -137,7 +137,7 @@ export const Navbar = () => {
               <NavLink
                 className={cls.link}
                 exact
-                to="/home"
+                to="/todolist-material_ui/home"
                 activeClassName={cls.active}
               >
                 Home
@@ -148,7 +148,7 @@ export const Navbar = () => {
             <li>
               <NavLink
                 className={cls.link}
-                to="/todolist"
+                to="/todolist-material_ui/todolist"
                 activeClassName={cls.active}
               >
                 Make a list
@@ -159,7 +159,7 @@ export const Navbar = () => {
             <li>
               <NavLink
                 className={cls.link}
-                to="/manual"
+                to="/todolist-material_ui/manual"
                 activeClassName={cls.active}
               >
                 User's manual

@@ -53,15 +53,15 @@ function App() {
         <div>
           <AlertState>
             <AuthContext.Provider value={{ state, dispatch }}>
-              {!state.isValid ? <Route path="/" component={Auth} /> : null}
+              {!state.isValid ? <Route path="/todolist-material_ui" component={Auth} /> : null}
             </AuthContext.Provider>
             {state.isValid ? (
               <>
                 <Navbar />
                 <Switch>
-                  <Route path="/home" component={Home} />
-                  <Route path="/todolist" component={TodoList} />
-                  <Route path="/manual" component={Manual} />
+                  <Route path="/todolist-material_ui/home" component={Home} />
+                  <Route path="/todolist-material_ui/todolist" component={TodoList} />
+                  <Route path="/todolist-material_ui/manual" component={Manual} />
                 </Switch>
               </>
             ) : null}

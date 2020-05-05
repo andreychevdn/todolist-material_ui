@@ -13,7 +13,7 @@ const Auth = (props) => {
   const { alert } = useContext(AlertContext);
 
   const goToAuth = () => {
-    props.history.push("/");
+    props.history.push("/todolist-material_ui");
   };
 
   useEffect(() => {
