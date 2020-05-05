@@ -166,6 +166,16 @@ export const Navbar = () => {
               </NavLink>
             </li>
           </ListItem>
+          <ListItem button>  
+            <li>
+              <NavLink
+                className={cls.link}
+                to="/todolist-material_ui/"
+              >
+                Log out
+              </NavLink>
+            </li>
+          </ListItem>
         </List>
         <Divider />
       </Drawer>
