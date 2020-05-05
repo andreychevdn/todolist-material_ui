@@ -57,11 +57,11 @@ function App(props) {
             </AuthContext.Provider>
             {state.isValid ? (
               <>
-                <Route path="/todolist-material_ui/navbar/" component={Navbar} />
+                <Navbar/>
                 <Switch>
-                  <Route path="/todolist-material_ui/navbar/home" component={Home} />
-                  <Route path="/todolist-material_ui/navbar/todolist" component={TodoList} />
-                  <Route path="/todolist-material_ui/navbar/manual" component={Manual} />
+                  <Route path="/todolist-material_ui/home" component={Home} />
+                  <Route path="/todolist-material_ui/todolist" component={TodoList} />
+                  <Route path="/todolist-material_ui/manual" component={Manual} />
                 </Switch>
               </>
             ) : null}

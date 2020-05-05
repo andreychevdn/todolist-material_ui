@@ -5,8 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import { AuthContext } from "../../context/auth/authContext";
 import { AlertContext } from "../../context/alert/alertContext";
 
-const Form = ({ name, goToNavbar}) => {
-  console.log(goToNavbar);
+const Form = ({ name }) => {
   const { state, dispatch } = useContext(AuthContext);
   let { login, password1, password2, email } = state.registrationForm;
   let { login: loginAuth, password: passwordAuth } = state.authorizationForm;
@@ -46,7 +45,6 @@ const Form = ({ name, goToNavbar}) => {
         password2.value === passwordAuth.draft)
     ) {
       hideAlert();
-      goToNavbar();
       dispatch({ type: "SIGN_IN" });
     }
   };

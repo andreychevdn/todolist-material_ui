@@ -16,14 +16,10 @@ const Auth = (props) => {
     props.history.push("/todolist-material_ui/");
   };
 
-  const goToNavbar = () => {
-    props.history.push("/todolist-material_ui/navbar/");
-  };
-
-  // useEffect(() => {
-  //   goToAuth();
-  //   // eslint-disable-next-line
-  // }, []);
+  useEffect(() => {
+    goToAuth();
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     sessionStorage.setItem(
@@ -54,7 +50,7 @@ const Auth = (props) => {
         </div>
         {alert.alertVisible ? <TodoAlert /> : null}
         {state.isRegistration ? (
-          <Form name="Log in" goToNavbar={goToNavbar} />
+          <Form name="Log in" />
         ) : (
           <Form name="Sign up" />
         )}
