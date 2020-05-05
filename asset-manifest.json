@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/todolist-material_ui/static/css/main.112972fd.chunk.css",
-    "main.js": "/todolist-material_ui/static/js/main.13bc009b.chunk.js",
-    "main.js.map": "/todolist-material_ui/static/js/main.13bc009b.chunk.js.map",
+    "main.css": "/todolist-material_ui/static/css/main.b64224e3.chunk.css",
+    "main.js": "/todolist-material_ui/static/js/main.fc484450.chunk.js",
+    "main.js.map": "/todolist-material_ui/static/js/main.fc484450.chunk.js.map",
     "runtime-main.js": "/todolist-material_ui/static/js/runtime-main.3c28e4f9.js",
     "runtime-main.js.map": "/todolist-material_ui/static/js/runtime-main.3c28e4f9.js.map",
-    "static/js/2.d78f3c0f.chunk.js": "/todolist-material_ui/static/js/2.d78f3c0f.chunk.js",
-    "static/js/2.d78f3c0f.chunk.js.map": "/todolist-material_ui/static/js/2.d78f3c0f.chunk.js.map",
+    "static/js/2.b365924e.chunk.js": "/todolist-material_ui/static/js/2.b365924e.chunk.js",
+    "static/js/2.b365924e.chunk.js.map": "/todolist-material_ui/static/js/2.b365924e.chunk.js.map",
     "index.html": "/todolist-material_ui/index.html",
-    "precache-manifest.8acd156861a2bdd8e975db3da1e1ca74.js": "/todolist-material_ui/precache-manifest.8acd156861a2bdd8e975db3da1e1ca74.js",
+    "precache-manifest.edf8caf224162ef2bdc928e0c1c44ba7.js": "/todolist-material_ui/precache-manifest.edf8caf224162ef2bdc928e0c1c44ba7.js",
     "service-worker.js": "/todolist-material_ui/service-worker.js",
-    "static/css/main.112972fd.chunk.css.map": "/todolist-material_ui/static/css/main.112972fd.chunk.css.map",
-    "static/js/2.d78f3c0f.chunk.js.LICENSE": "/todolist-material_ui/static/js/2.d78f3c0f.chunk.js.LICENSE"
+    "static/css/main.b64224e3.chunk.css.map": "/todolist-material_ui/static/css/main.b64224e3.chunk.css.map",
+    "static/js/2.b365924e.chunk.js.LICENSE": "/todolist-material_ui/static/js/2.b365924e.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.3c28e4f9.js",
-    "static/js/2.d78f3c0f.chunk.js",
-    "static/css/main.112972fd.chunk.css",
-    "static/js/main.13bc009b.chunk.js"
+    "static/js/2.b365924e.chunk.js",
+    "static/css/main.b64224e3.chunk.css",
+    "static/js/main.fc484450.chunk.js"
   ]
 }
