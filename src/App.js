@@ -12,7 +12,7 @@ import { Manual } from "./pages/Manual";
 import { Navbar } from "./components/navbar/Navbar";
 import { AlertState } from "./context/alert/alertState";
 
-function App() {
+function App(props) {
   const [state, dispatch] = useReducer(authorizationReducer, {
     registrationForm: JSON.parse(
       sessionStorage.getItem("registrationForm")
@@ -57,11 +57,11 @@ function App() {
             </AuthContext.Provider>
             {state.isValid ? (
               <>
-                <Navbar />
+                <Route path="/todolist-material_ui/navbar/" component={Navbar} />
                 <Switch>
-                  <Route path="/todolist-material_ui/home" component={Home} />
-                  <Route path="/todolist-material_ui/todolist" component={TodoList} />
-                  <Route path="/todolist-material_ui/manual" component={Manual} />
+                  <Route path="/todolist-material_ui/navbar/home" component={Home} />
+                  <Route path="/todolist-material_ui/navbar/todolist" component={TodoList} />
+                  <Route path="/todolist-material_ui/navbar/manual" component={Manual} />
                 </Switch>
               </>
             ) : null}
